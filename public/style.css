@@ -1,0 +1,155 @@
+:root {
+  --glass-bg: rgba(255, 255, 255, 0.1);
+  --glass-border: rgba(255, 255, 255, 0.2);
+  --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+  --text-color: #ffffff;
+}
+
+body {
+  background: linear-gradient(45deg, #1a1a2e, #16213e, #4a1c40, #1a1a2e);
+  background-size: 200% 200%;
+  animation: gradientBG 10s ease infinite;
+
+  font-family: sans-serif;
+
+  height: 100vh;
+  margin: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-color);
+}
+
+@keyframes gradientBG {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 50% 100%;
+  }
+  100% {
+    background-position: 100% 50%;
+  }
+}
+
+.glass-card {
+  background: var(--glass-bg);
+  backdrop-filter: blur(12px);
+  backdrop-filter: blur(12px);
+  border: 1px solid var(--glass-border);
+  box-shadow: var(--glass-shadow);
+  border-radius: 20px;
+  padding: 2rem;
+  text-align: center;
+}
+
+.search-container {
+  width: 100%;
+  max-width: 400px;
+}
+
+.card-title {
+  font-weight: 300px;
+  letter-spacing: 2px;
+  margin-bottom: 30px;
+}
+
+.search-input {
+  background: transparent;
+  border: none;
+  outline: none;
+  border-bottom: 2px solid rgba(255, 255, 255, 0.5);
+  padding: 10px;
+  font-size: 1.5rem;
+  text-align: center;
+  width: 75%;
+  transition: all 0.3s ease;
+}
+
+.search-input:focus {
+  width: 90%;
+  border-bottom: 2px solid white;
+  color: whitesmoke;
+}
+
+.search-input::placeholder {
+  color: rgba(255, 255, 255, 0.5);
+}
+
+.search-btn {
+  margin-top: 25px;
+  padding: 8px 25px;
+  background: rgba(255, 255, 255, 0.6);
+  border-radius: 10px;
+  border: rgba(255, 255, 255, 0.3);
+  color: white;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: all 0.3s;
+}
+
+.search-btn:hover {
+  background: white;
+  color: #1a1a2e;
+  box-shadow: 0 0 15px rgba(255, 255, 255, 0.7);
+}
+
+.weather-dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 800px;
+  width: 90%;
+  margin-top: 20px;
+}
+
+.full-span {
+  grid-column: span 2;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  text-align: left;
+}
+
+.weather-info-left {
+  flex: 1;
+}
+
+.city-title {
+  font-size: 2.5rem;
+  margin: 0;
+  font-weight: 500px;
+}
+
+.weather-description {
+  font-size: 1.5rem;
+  opacity: 0.9;
+  margin: 5px 0 0 0;
+  text-transform: capitalize;
+}
+
+.weather-icon-container {
+  font-size: 3rem;
+  margin: 0 20px;
+}
+
+.temp-big {
+  font-size: 2.5rem;
+  font-weight: 500;
+}
+
+.card-label {
+  font-size: 1rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  opacity: 0.9;
+  margin-bottom: 10px;
+  margin-top: 0px;
+}
+
+.card-value {
+  font-size: 1.8rem;
+  font-weight: 400;
+  margin: 0px;
+}
+

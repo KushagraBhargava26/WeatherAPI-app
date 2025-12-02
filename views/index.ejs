@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/style.css" />
+    <title>Document</title>
+  </head>
+  <body>
+    <div class="weather-dashboard">
+      <% if(weather){ %>
+      <div class="glass-card full-span">
+        <div class="weather-info-left">
+          <h1 class="city-title"><%= weather.city %></h1>
+          <p class="weather-description"><%= weather.condition %></p>
+        </div>
+
+        <div class="weather-icon-container"><%= weather.icon %></div>
+        <div class="temp-big"><%= weather.temperature %>°C</div>
+      </div>
+
+      <div class="glass-card">
+        <h3 class="card-label">windspeed:</h3>
+        <p class="card-value"><%= weather.windspeed %> Km/hr</p>
+      </div>
+      <div class="glass-card">
+        <h3 class="card-label">Feels like</h3>
+        <p class="card-value"><%= weather.feelLike %>°C</p>
+      </div>
+
+      <div class="glass-card">
+        <h3 class="card-label">Sunrise</h3>
+        <p class="card-value"><%= new Date(weather.sunrise).toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", }) %></p>
+      </div>
+      <div class="glass-card">
+        <h3 class="card-label">Sunset</h3>
+        <p class="card-value"><%= new Date(weather.sunset).toLocaleTimeString(undefined, { hour: "2-digit", minute: "2-digit", }) %></p>
+      </div>
+
+      <% } %>
+    </div>
+  </body>
+</html>
